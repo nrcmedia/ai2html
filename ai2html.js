@@ -2,6 +2,9 @@
 var scriptVersion     = "0.61";
 // var scriptEnvironment = "nyt";
 var scriptEnvironment = "";
+if(app.activeDocument.documentColorSpace != DocumentColorSpace.RGB){
+  alert("You're not working in RGB");
+}
 
 // ai2html is a script for Adobe Illustrator that converts your Illustrator document into html and css.
 
@@ -127,7 +130,7 @@ var exportImageFiles = function(dest,width,height,formats,initialScaling,doubler
 	// options, dest contains the full path including the file name
 	// doubleres is "yes" or "no" whether you want to allow images to be double res
 	// if you want to force ai2html to use doubleres, use "always"
-	
+
 	if (doubleres=="yes" || doubleres=="always") {
 		// if image is too big to use double-res, then just output single-res.
 		var pngImageScaling = 200 * initialScaling;
@@ -646,7 +649,47 @@ var fonts = [
 	{"aifont":"Stymie-Thin","family":"nyt-stymie,arial,helvetica,sans-serif","weight":"300","style":""},
 	{"aifont":"Stymie-UltraLight","family":"nyt-stymie,arial,helvetica,sans-serif","weight":"300","style":""},
 	{"aifont":"NYTMagSans-Regular","family":"'nyt-mag-sans',arial,helvetica,sans-serif","weight":"500","style":""},
-	{"aifont":"NYTMagSans-Bold","family":"'nyt-mag-sans',arial,helvetica,sans-serif","weight":"700","style":""}
+	{"aifont":"NYTMagSans-Bold","family":"'nyt-mag-sans',arial,helvetica,sans-serif","weight":"700","style":""},
+  {"aifont":"OTFEticaDisplay-Thin","family": "LFT Etica","weight": "100","style":""},
+  {"aifont":"OTFEticaDisplay-ThinItalic","family": "LFT Etica","weight": "100","style": "italic"},
+  {"aifont":"OTFEtica-Light","family": "LFT Etica","weight": "200","style":""},
+  {"aifont":"OTFEtica-LightItalic","family": "LFT Etica","weight": "200","style": "italic"},
+  {"aifont":"OTFEtica-Book","family": "LFT Etica","weight": "300","style":""},
+  {"aifont":"OTFEtica-BookItalic","family": "LFT Etica","weight": "300","style": "italic"},
+  {"aifont":"OTFEtica-Regular","family": "LFT Etica","weight": "400","style":""},
+  {"aifont":"OTFEtica-RegularItalic","family": "LFT Etica","weight": "400","style": "italic"},
+  {"aifont":"OTFEtica-SemiBold","family": "LFT Etica","weight": "500","style":""},
+  {"aifont":"OTFEtica-SemiBoldItalic","family": "LFT Etica","weight": "500","style": "italic"},
+  {"aifont":"OTFEtica-Bold","family": "LFT Etica","weight": "600","style":""},
+  {"aifont":"OTFEtica-BoldItalic","family": "LFT Etica","weight": "600","style": "italic"},
+  {"aifont":"OTFEtica-Extrabold","family": "LFT Etica","weight": "bold","style":""},
+  {"aifont":"OTFEtica-ExtraboldItalic","family": "LFT Etica","weight": "bold","style": "italic"},
+  {"aifont":"OTFEticaDispla-Heavy","family": "LFT Etica","weight": "800","style":""},
+  {"aifont":"OTFEticaDisplay-HeavyItalic","family": "LFT Etica","weight": "800","style": "italic"},
+  {"aifont":"GuardianEgyp-Hairline","family": "Guardian Egyptian Web","weight": "100","style":""},
+  {"aifont":"GuardianEgyp-HairlineIt","family": "Guardian Egyptian Web","weight": "100","style": "italic"},
+  {"aifont":"GuardianEgyp-Thin","family": "Guardian Egyptian Web","weight": "200","style":""},
+  {"aifont":"GuardianEgyp-ThinIt","family": "Guardian Egyptian Web","weight": "200","style": "italic"},
+  {"aifont":"GuardianEgyp-Light","family": "Guardian Egyptian Web","weight": "300","style":""},
+  {"aifont":"GuardianEgyp-LightIt","family": "Guardian Egyptian Web","weight": "300","style": "italic"},
+  {"aifont":"GuardianEgyp-Regular","family": "Guardian Egyptian Web","weight": "400","style":""},
+  {"aifont":"GuardianEgyp-RegularIt","family": "Guardian Egyptian Web","weight": "400","style": "italic"},
+  {"aifont":"GuardianEgyp-Medium","family": "Guardian Egyptian Web","weight": "500","style":""},
+  {"aifont":"GuardianEgyp-MediumIt","family": "Guardian Egyptian Web","weight": "500","style": "italic"},
+  {"aifont":"GuardianEgyp-Semibold","family": "Guardian Egyptian Web","weight": "600","style":""},
+  {"aifont":"GuardianEgyp-SemiboldIt","family": "Guardian Egyptian Web","weight": "600","style": "italic"},
+  {"aifont":"GuardianEgyp-Bold","family": "Guardian Egyptian Web","weight": "bold","style":""},
+  {"aifont":"GuardianEgyp-BoldIt","family": "Guardian Egyptian Web","weight": "bold","style": "italic"},
+  {"aifont":"GuardianEgyp-Black","family": "Guardian Egyptian Web","weight": "800","style":""},
+  {"aifont":"GuardianEgyp-BlackIt","family": "Guardian Egyptian Web","weight": "800","style": "italic"},
+  {"aifont":"GuardianTextEgyp-Regular","family": "Guardian Text Egyptian Web","weight": "400","style":""},
+  {"aifont":"GuardianTextEgyp-RegularIt","family": "Guardian Text Egyptian Web","weight": "400","style": "italic"},
+  {"aifont":"GuardianTextEgyp-Medium","family": "Guardian Text Egyptian Web","weight": "500","style":""},
+  {"aifont":"GuardianTextEgyp-MediumIt","family": "Guardian Text Egyptian Web","weight": "500","style": "italic"},
+  {"aifont":"GuardianTextEgyp-Bold","family": "Guardian Text Egyptian Web","weight": "bold","style":""},
+  {"aifont":"GuardianTextEgyp-BoldIt","family": "Guardian Text Egyptian Web","weight": "bold","style": "italic"},
+  {"aifont":"GuardianTextEgyp-Black","family": "Guardian Text Egyptian Web","weight": "900","style":""},
+  {"aifont":"GuardianTextEgyp-BlackIt","family": "Guardian Text Egyptian Web","weight": "900","style": "italic"}
 ];
 
 var caps = [
